@@ -1,0 +1,22 @@
+{
+  "name": "shop-production-app",
+  "version": "1.0.0",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "scripts": {
+    "dev": "concurrently -n backend,frontend -c blue,green \"npm run dev -w backend\" \"npm run dev -w frontend\"",
+    "build": "npm run build -w frontend",
+    "start": "npm run start -w backend",
+    "test": "npm run test -w backend",
+    "docker:build": "docker compose build",
+    "docker:up": "docker compose up --build",
+    "docker:down": "docker compose down",
+    "docker:clean": "docker compose down -v"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  }
+}
