@@ -37,7 +37,7 @@ spec:
           type: RuntimeDefault
       containers:
         - name: frontend
-          image: shop-frontend:local
+          image: docker.io/daggu1997/shop-app-frontend:v0.0.1
           imagePullPolicy: IfNotPresent
           ports:
             - name: http
